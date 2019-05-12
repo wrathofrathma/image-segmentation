@@ -1,5 +1,5 @@
 CC=g++ -std=c++17
-CFLAGS=-Wall -I. -O2 -s -lsfml-graphics -lGL -lGLEW -pthread -lGLU
+CFLAGS=-Wall -I. -O2 -s -lsfml-graphics -lstdc++fs
 OBJDIR=obj
 SRCDIR = ./src
 SRC:=$(shell find $(SRCDIR) -name "*.cpp")
@@ -14,6 +14,3 @@ prog: $(OBJ)
 
 clean:
 	rm $(shell find $(OBJDIR) -name "*.o")
-
-run:
-	./prog
