@@ -2,8 +2,7 @@ CC=g++ -std=c++17
 CFLAGS=-Wall -I. -O2 -s -lsfml-graphics -lstdc++fs
 OBJDIR=obj
 SRCDIR = ./src
-# SRC:=$(shell find $(SRCDIR) -name "*.cpp")
-SRC:=src/test.cpp
+SRC:=$(shell find $(SRCDIR) -name "*.cpp")
 OBJ:=$(SRC:%.cpp=$(OBJDIR)/%.o)
 
 $(OBJDIR)/%.o: %.cpp

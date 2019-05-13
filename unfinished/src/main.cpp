@@ -7,11 +7,15 @@
 
 using namespace std;
 
+
+
+
 int main(){
 	//Meaningful variables.
 	std::string input_directory = "in/";
 	std::string output_directory = "out/";
-
+	unsigned int K = 200;
+	unsigned int E = 10;
 	//Our containers.
 	std::vector<std::string> file_list;
 	std::vector<Slic> images;
@@ -23,6 +27,8 @@ int main(){
 
 	for(Slic image : images){
 		image.loadToGraph();
+		image.generateSuperpixels(K,E);
+		std::cout << "Write" << std::endl;
 		image.writeToDisk(output_directory);
 	}
 
